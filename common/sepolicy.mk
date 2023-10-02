@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all products that
-# inherit from BlissRoms
+# inherit from ApolloOS
 #
 
 ifeq ($(TARGET_COPY_OUT_VENDOR), vendor)
@@ -16,25 +16,25 @@ endif
 endif
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    device/bliss/sepolicy/common/public
+    device/apollo/sepolicy/common/public
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/bliss/sepolicy/common/private
+    device/apollo/sepolicy/common/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/bliss/sepolicy/common/dynamic \
-    device/bliss/sepolicy/common/system
+    device/apollo/sepolicy/common/dynamic \
+    device/apollo/sepolicy/common/system
 else
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/bliss/sepolicy/common/dynamic \
-    device/bliss/sepolicy/common/vendor
+    device/apollo/sepolicy/common/dynamic \
+    device/apollo/sepolicy/common/vendor
 endif
 
 # Selectively include legacy rules defined by the products
--include device/bliss/sepolicy/legacy-common/sepolicy.mk
+-include device/apollo/sepolicy/legacy-common/sepolicy.mk
 
 # Include atv rules on atv product
 ifeq ($(PRODUCT_IS_ATV), true)
-include device/bliss/sepolicy/atv/sepolicy.mk
+include device/apollo/sepolicy/atv/sepolicy.mk
 endif

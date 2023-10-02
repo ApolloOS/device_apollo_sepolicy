@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all exynos products
-# that inherit from BlissRoms
+# that inherit from ApolloOS
 #
 
 ifeq ($(TARGET_COPY_OUT_VENDOR), vendor)
@@ -10,14 +10,14 @@ endif
 endif
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/bliss/sepolicy/exynos/private
+    device/apollo/sepolicy/exynos/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/bliss/sepolicy/exynos/dynamic \
-    device/bliss/sepolicy/exynos/system
+    device/apollo/sepolicy/exynos/dynamic \
+    device/apollo/sepolicy/exynos/system
 else
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/bliss/sepolicy/exynos/dynamic \
-    device/bliss/sepolicy/exynos/vendor
+    device/apollo/sepolicy/exynos/dynamic \
+    device/apollo/sepolicy/exynos/vendor
 endif
